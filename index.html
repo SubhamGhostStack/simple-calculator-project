@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        body{
+            color: white;
+            background: black;
+            font-family: Arial, sans-serif;
+        }
+        .main{
+           
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: COLUMN;
+            
+           
+        }
+        button{
+           width: 100px;
+          
+            padding: 10px;
+            margin: 2px;
+           font-weight: 900;
+           font-size: 2vw;
+           border-radius: 20px;
+           border: 5px solid #38bdf8;
+           
+        
+          
+        }
+        button:hover{
+            animation: infinite;
+           transition: 0.5s;
+           color: white;
+           background: black;
+        }
+        .inp{
+            width: 410px;
+            height: 100px;
+            text-align: right;
+            font-size: 35px;
+            font-weight: 900;
+            margin: 10px;
+            border: 5px solid #38bdf8;
+            border-radius: 10px;
+           
+            
+        }
+       .calculate{
+        width: 200px;
+        background: #38bdf8;
+       }
+       .clear{
+        background: rgb(209, 17, 17);
+       }
+       .cl{
+        border: 8px solid #38bdf8;
+        width: 500px;
+        padding: 5px;
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
+        border-bottom-left-radius: 20px;
+         border-bottom-right-radius: 20px;
+       }
+       @media(max-width:600px){
+         button{
+           width: 60px;
+          
+            padding: 5px;
+            margin: 1px;
+           font-weight: 500;
+           font-size: 2vw;
+           border-radius: 10px;
+           border: 3px solid #38bdf8;
+        
+          
+        }
+        .inp{
+            width: 250px;
+            height: 50px;
+            text-align: right;
+            font-size: 25px;
+            font-weight: 500;
+            margin: 5px;
+            border: 3px solid #38bdf8;
+            border-radius: 5px;
+           
+            
+        }
+       .calculate{
+        width: 130px;
+        background: #38bdf8;
+       }
+        .cl{
+        border: 6px solid #38bdf8;
+        width: 300px;
+        padding: 3px;
+         border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+        border-bottom-left-radius: 15px;
+         border-bottom-right-radius: 15px;
+       }
+    }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>CALCULATOR</h1>
+        <div class="cl">
+        <input type="text" name="" id="" class="inp" placeholder="000000000000000">
+        
+        <div class="btn">
+            <button class="clear" onclick="clearinp()">C</button>
+             <button class="" onclick="lastdel()"> DEL</button>
+              <button class="" onclick="add('%')">%</button>
+               <button class="" onclick="add('/')">/</button>
+               </div>
+               <div class="btn">
+                <button class="" onclick="add('7')">7</button>
+                 <button class="" onclick="add('8')">8</button>
+                  <button class="" onclick="add('9')">9</button>
+                   <button class="" onclick="add('*')">*</button>
+                   </div>
+                    <div class="btn">
+                    <button class="" onclick="add('4')">4</button>
+                     <button class="" onclick="add('5')">5</button>
+                      <button class="" onclick="add('6')">6</button>
+                       <button class="" onclick="add('-')">-</button>
+                    </div>
+                     <div class="btn">
+                        <button class="" onclick="add('1')">1</button>
+                         <button class="" onclick="add('2')">2</button>
+                          <button class="" onclick="add('3')">3</button>
+                           <button class="bigbtn" onclick="add('+')">+</button>
+                     </div>
+                            <div class="btn">
+                            <button class="" onclick="add('0')">0</button>
+                             <button class="" onclick="add('.')">.</button>
+                              <button class="calculate" onclick="calculate()">=</button>
+                            </div>
+            </div>
+        
+    </div>
+    <script>
+        let x=document.querySelector(".inp");
+       function add(y) {
+    if (x.value == "" && ["%", "*", "-", "/", "+"].includes(y)) {
+        return;
+    }
+
+    x.value += y;
+}
+        function clearinp(){
+            x.value="";
+        }
+        function lastdel(){
+            x.value=x.value.slice(0,-1);
+        }
+        function calculate(){
+            if(x.value==""){
+                return;
+            }
+            x.value=eval(x.value);
+        }
+    </script>
+</body>
+</html>
