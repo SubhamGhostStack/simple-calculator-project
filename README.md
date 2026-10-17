@@ -1,0 +1,2 @@
+# simple-calculator-project
+A SIMPLE CALCULATOR BUILT USING HTML, CSS,JAVASCRIPT AS A BCA 3rd Semester
